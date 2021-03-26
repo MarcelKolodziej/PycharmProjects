@@ -1,11 +1,11 @@
-import requests
+import bs4
 
-res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
-try:
-    print(res.raise_for_status())
-except Exception as exc:
-    print('There was a problem: %s' % (exc))
-
-res.status_code == requests.codes.ok
-print(len(res.text))
-print(res.text[:250])
+exampleFile = open('example.html')
+exampleSoup = bs4.BeautifulSoup(exampleFile.read(), 'html.parser')
+Elems = exampleSoup.select('#author')
+type(Elems)
+print(len(Elems))
+print(type(Elems[0]))
+print(Elems[0].getText())
+print(str(Elems[0]))
+print(Elems[0].attrs)
