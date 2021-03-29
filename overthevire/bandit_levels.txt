@@ -1,0 +1,37 @@
+ This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+level 1
+
+password: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+used commands:
+dir <- view files in catalog 
+cat 'x' <- read the 'x' file
+
+Bandit Level 1 → Level 2
+
+password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+problem: how to find,open '.-/'
+
+used commands: ls, cd, cat, file, du, find
+
+
+Bandit Level 2 → Level 3
+
+password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+problem: https://unix.stackexchange.com/questions/148043/is-space-not-allowed-in-a-filename
+
+used commands: tab
+
+Bandit Level 3 → Level 4
+
+password: 
+
+problem: The password for the next level is stored in a hidden file in the inhere directory.
