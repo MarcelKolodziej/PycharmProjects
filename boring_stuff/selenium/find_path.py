@@ -1,4 +1,4 @@
-def try_find_chrome_path():
+def try_find_chrome_path(_winreg=None):
     result = None
     if _winreg:
         for subkey in ['ChromeHTML\\shell\\open\\command', 'Applications\\chrome.exe\\shell\\open\\command']:

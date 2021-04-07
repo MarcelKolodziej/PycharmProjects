@@ -19,3 +19,14 @@ except:
     print("Cannot find a element  by class name ")
 loginButton.submit()
 
+#login to choosen server:
+try:
+    serverLoginButton = browser.find_element_by_class_name('world_button_active')
+except:
+    print("Cannot login to choosen world ")
+
+try:
+    worldLoginButton = browser.find_element_by_class_name('world-select')
+except:
+    print("Cannot login to world")
+
