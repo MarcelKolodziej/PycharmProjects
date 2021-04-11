@@ -95,15 +95,19 @@ done = False
 class listaZakupow:
     def __init__(self):
         self.produkty = []
-    def dodajDoListy(self, produkt):
+
+    def dodajDoKoszyka(self, produkt):
         self.produkt.append(produkt)
-    def usunZListy(self, produkt_index):
+
+    def usunZKoszyka(self, produkt_index):
         self.produkt.pop(produkt_index)
-    def CenaListy(self):
+
+    def cenaKoszyka(self):
         cena = 0
         for x in self.produkty:
             cena = cena + x.cena
         return cena
+
     def listaProduktow(self):
         cid = 0
         print("Lista produktów:")
@@ -137,5 +141,46 @@ def StworzSklep(dokument_tekstowy):
         print("Brak sklepu,... tworzenie produktow")
         stworzProdukty(2)
 
+def listaSklepu():
+    iid = 0
+    for x in sklep:
+        print(iid, x.cena, x.nazwa)
+        iid = iid + 1
+
+def WypiszInstrukcje():
+    print("C by zobaczyć Twój koszyk")
+    print("R by usunac z koszyka")
+    print("Wpisz liczbe by dodac produkt")
+    print("Wpisz P by zobaczyc aktualna cene koszyka")
+    print("X wyjscie <-----")
+
+def usunProdukt(koszyk):
+    input1 = input("Wpisz ID produktu by go usunac")
+    koszyk.usunZKoszyka(input1)
+
+def handleInput(in_var, koszyk):
+	lista_klawiszy = ["C","R","P","X"]
+	if(in_var == "C"):
+		koszyk.listaProduktow()
+	if(in_var == "R"):
+		usunProdukt(koszyk)
+	if(in_var == "P"):
+		print("Obecna cena za koszyk")
+		print(koszyk.cenaKoszyka())
+	if(in_var == "X"): # wyjscie
+		global done
+		done = True
+	if in_var not in lista_klawiszy:
+		try:
+			koszyk.dodajDoKoszyka(sklep[int(in_var)])
+		except:
+			print("Wybrales zla komende!")
+
+koszyk1 = listaZakupow()
+StworzSklep("koszyk1.listaZakupow")
+
 while(done == False):
-    lista
+    listaSklepu()
+    WypiszInstrukcje()
+    input_var = input("Wybierz produkt do kupienia(Wpisz id)")
+    handleInput(input_var, koszyk1)
