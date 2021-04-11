@@ -1,14 +1,32 @@
-class Dog:
-    species = "Canis familiaris"
+from math import sqrt
 
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# Function return square value of a,b,c
+# $ax^2$+bx+c
+class square_fun:
 
-    # Instance method
-    def description(self):
-        return f"{self.name} is {self.age} years old"
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
 
-    # Another instance method
-    def speak(self, sound):
-        return f"{self.name} says {sound}"
+    def delta(self):
+        delta = (self.b)**2 - 4*(self.a) * (self.c)
+        print(delta)
+
+        if delta > 0:
+            y1 = (-self.b - sqrt(delta))/(2*self.c)
+            y2 = (-self.b + sqrt(delta))/(2*self.a)
+            print("function has 2 zero places", "y1 = ", y1, "y2 = ", y2)
+
+        if delta == 0:
+            y = (-self.b)/(2*self.a)
+            print("function has 1 zero places", "y0 = ", y)
+
+        if delta < 0:
+            print("no zero places")
+
+        if self.a == 0:
+            print("its not square function")
+
+square_fun1 = square_fun(1,5,2)
+print(square_fun1.delta())
