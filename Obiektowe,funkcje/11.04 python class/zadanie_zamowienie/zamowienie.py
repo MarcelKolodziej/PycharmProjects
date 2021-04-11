@@ -64,8 +64,6 @@
 #
 # zwiększała liczbę sztuk w już istniejącej
 #
-#
-#
 # 3. W klasie Pozycja :
 #
 # • zaimplementować metodę double obliczWartoscZRabatem , która oblicza
