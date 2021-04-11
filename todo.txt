@@ -1,0 +1,16 @@
+Your Programming Journey
+The journey from novice to capable programmer can often feel like attempting to drink from a fire hose. With so many resources to choose from, you might worry that you’re wasting time on suboptimal programming guides.
+
+After you finish reading this book (or even while you’re reading this book), I recommend following up by reading these additional introductory materials:
+
+Python Crash Course (No Starch Press, 2019) by Eric Matthes is a book for beginners, but its project-based approach gives even experienced programmers a taste of Python’s Pygame, matplotlib, and Django libraries.
+Impractical Python Projects (No Starch Press, 2018) by Lee Vaughan provides a project-based approach to expand your Python skills. The programs you’ll create by following the instructions in this book are fun and great programming practice.
+Serious Python (No Starch Press, 2018) by Julien Danjou describes the steps you need to take to progress from a garage project hobbyist to a knowledgeable software developer who follows industry best practices and writes code that can scale.
+But the technical aspects of Python are only one of its strengths. The programming language has attracted a diverse community responsible for creating a friendly, accessible body of documentation and support that no other programming ecosystem has matched. The annual PyCon conference, along with the many regional PyCons, hosts a wide variety of talks for all experience levels. The PyCon organizers make these talks available online for free at https://pyvideo.org/. The Tags page lets you easily find talks on topics that correspond to your interests.
+
+To take a deeper dive into the advanced features of Python’s syntax and standard library, I recommend reading the following titles:
+
+Effective Python (Addison-Wesley Professional, 2019) by Brett Slatkin is an impressive collection of Pythonic best practices and language features.
+Python Cookbook (O’Reilly Media, 2013) by David Beazley and Brian K. Jones offers an extensive list of code snippets to upgrade any Python novice’s repertoire.
+Fluent Python (O’Reilly Media, 2021) by Luciano Ramalho is a masterwork for exploring the intricacies of the Python language, and although its near-800-page size might be intimidating, it’s well worth the effort.
+Good luck on your programming journey. Let’s get started!
