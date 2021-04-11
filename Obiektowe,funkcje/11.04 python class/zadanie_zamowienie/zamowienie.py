@@ -126,7 +126,7 @@ nazwaProduktow = ["Chleb" , "Cukier" , "Maka" , "Jaja"]
 def stworzProdukty(amt):
     iloscProduktow = 0
     while iloscProduktow <= amt:
-        nProdukt = Produkt(randint(1, 50), nazwaProduktow[randint(0, len(nazwaProduktow) - 1)])
+        nProdukt = Produkt(randint(1, 3), nazwaProduktow[randint(0, len(nazwaProduktow) - 1)])
         sklep.append(nProdukt)
         iloscProduktow = iloscProduktow + 1
 
