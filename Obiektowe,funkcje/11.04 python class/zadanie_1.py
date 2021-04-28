@@ -6,7 +6,7 @@ class MyNumber:
         self.number = number
 
     def MyNumber_isOdd(self):
-        if (self.number % 3) == 0:
+        if (self.number % 2) == 1:
             return True
         else:
             return False
