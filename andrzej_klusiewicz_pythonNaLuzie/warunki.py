@@ -52,11 +52,22 @@
 #         print('y={}, x={}'.format(y,x))
 
 
-y,x = 1,1
-while(y<10):
-    x = 1
-    while(x<=10):
-        print('y={}, x={}'.format(y,x))
-        x+=1
-    y+=1
+# y,x = 1,1
+# while(y<10):
+#     x = 1
+#     while(x<=10):
+#         print('y={}, x={}'.format(y,x))
+#         x+=1
+#     y+=1
+
+#Break
+
+for x in range(1,101):
+ if(x%17.5==0):
+     print("szukana liczba to {}".format(x))
+     break
+
+# Powyższy kod szuka pierwszej liczby z zakresu 1-100 podzielnej przez 17.5. Przeszukujemy zakres
+# liczba po liczbie i sprawdzamy czy reszta z dzielenia tej liczby przez 17.5 wynosi 0. Jeśli tak, to jest
+# to poszukiwana przez nas liczba i można przerwać dalsze poszukiwania z użyciem instrukcji break.
 
