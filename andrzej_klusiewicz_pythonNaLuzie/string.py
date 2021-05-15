@@ -12,6 +12,6 @@ print(kriszna)
 #Szukanie danej frazy w tekście
 if ("X" in "SpaceX"):
     print("ten ciag zawiera X!")
-
+#Ilość znaków w tekśćie
 x=len("MINISTERSTWO DO SPRAW NIEZBYT ISTOTNYCH SPRAW")
 print(x)
