@@ -1,12 +1,16 @@
-import tkinter as tk
 from tkinter import *
+from tkinter.ttk import *
 
-root = tk.Tk()
+root = Tk()
 root.title("Ankieta")
 root.geometry("300x300")
-heading = Label(text="Ankieta",fg="black",bg="yellow",width="30",height="3",font="4")
-heading.grid(row=0, column=0)
 root.geometry("400x500")
+
+# Style class to add style to Radiobutton
+# it can be used to style any ttk widget
+style = Style(root)
+style.configure("TRadiobutton", background = "light green",
+                foreground = "red", font = ("arial", 10, "bold"))
 
 # Functions
 def saveData():
@@ -32,7 +36,21 @@ second_name_var = StringVar()
 plec_M = StringVar(root, "M")
 # plec_K = StringVar(app, "K")
 # age = IntVar()
+v = StringVar()
+##############################################
+# Dictionary to create multiple buttons
+values = {"RadioButton 1" : "1",
+          "RadioButton 2" : "2",
+          "RadioButton 3" : "3",
+          "RadioButton 4" : "4",
+          "RadioButton 5" : "5"}
+#############################################
 
+for (text, value) in values.items():
+    Radiobutton(root, text = text, variable = v,
+                value = value).pack(side = TOP, ipady = 5)
+
+#############################################
 ####### Shoving into screen
 name_label = Label(text="First name:")
 name_label.grid(row=1, column=0)
