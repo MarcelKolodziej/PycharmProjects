@@ -12,21 +12,33 @@ Program do prowadzenia budżetu,
 
 class Budzet(object):
     def __init__(self):
-     os.system('cls')
-     self.balans = float(input("Ile pieniedzy chcesz dodac do budzetu?"))
-     self.wydatki = self.wydatki
-     os.system('cls')
-     self.main()
+        os.system('cls')
+        self.budzet = float(input('Ile wynosi twój budzet?\n'))
+        self.wydatki = self.budzet * 0.5
+        os.system('cls')
+        self.main()
 
     def main(self):
-     print('\nTwoj budzet to: $', '{:.2f}'.format(self.budget))
-     main_option = int(input('\nWhat do you want to do?\n2) View Spending Budget\n3) Exit\n'))
-     if main_option == 1:
-         self.budget_plan()
-     elif main_option == 2:
-         self.spending_budget()
-     else:
-         quit
+        print('\nYour budzet: ', '{:.2f}'.format(self.budzet))
+        main_option = int(input('\nCo chcesz zrobic??\n1) Pokaz plan\n2) Pokaz wydatki\n3) Wyjscie\n'))
+        if main_option == 1:
+            self.wydatki_budzet()
+        elif main_option == 2:
+            self.pokaz_wydatki()
+        else
+    quit
+
+    def wydatki_budzet(self):
+        os.system('cls')
+        print('Spending Budzet: ', '{:.2f}'.format(self.wydatki))
+        wynajem = float(input('\nIle wynosi wynajem?\n'))
+        rachunki = float(input('\nIle wynoszą miesięczne rachunki?\n'))
+        food = float(input('\nIle wydajesz miesięczne na jedzenie?\n'))
+        print('\nWydatki:\nWynajem: ', '{:.2f}'.format(wynajem), '\nRachunki: ', '{:.2f}'.format(rachunki), '\nJedzenie: ',
+              '{:.2f}'.format(food))
+        os.system('pause')
+        os.system('cls')
+        self.main()
 
 
 Budzet()

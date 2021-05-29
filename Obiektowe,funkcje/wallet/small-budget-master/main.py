@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+__author__ = 'ivaylo spasov'
+
 from getBudget import currentBudget, path
 
 def main():
