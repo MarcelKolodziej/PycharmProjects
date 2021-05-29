@@ -1,4 +1,5 @@
 from getBudget import currentBudget, path
+from tkinter import *
 """
 
 Program do prowadzenia budżetu,
@@ -6,9 +7,8 @@ Program do prowadzenia budżetu,
 - rozchody podzielony na kategorie
 - generowanie raportów przychodów i rozchodów
 
-
 """
-
+class Aplication:
 def main():
     endProgram = 'no'
     totalBudget = currentBudget
@@ -35,7 +35,7 @@ def main():
             print('Do zobaczenia!')
         else:
             print('Nieprawidłowa komenda')
-
+#Dodaj wydatek
 def dodajWydatek(totalBudget):
     wydatek = float(input("Podaj ile wynosi wydatek"))
     wydatekWMiesiacu = int(input("Ile razy miesiecznie"))
@@ -47,16 +47,16 @@ def dodajWydatek(totalBudget):
     else:
         print('Wydatek został odrzucony ponieważ budżet tego nie udźwignie.')
         return totalBudget
-
+#Dodaj przychod
 def dodajPrzychod(totalBudget):
     przychod = float(input("Podaj nowy miesieczny przychod"))
     totalBudget = totalBudget + przychod
     print('Twój nowy budżet wynosi: {0}'.format(totalBudget))
     return totalBudget
-
+#zapisz
 def zapiszBudzet(totalBudget):
     with open(path, 'w') as f:
         f.write(str(totalBudget))
     f.close()
-
+#loop
 main()
