@@ -1,3 +1,5 @@
+""" Simple Control Manager of Library with GUI, databes  """
+
 from tkinter import *
 
 #Tkinter settings
