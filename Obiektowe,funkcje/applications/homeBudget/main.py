@@ -28,6 +28,6 @@ e_price = Entry(main_win, textvariable=price_text)
 e_price.grid(row=1, column=3)
 
 list_box = Listbox(main_win, height= 8, width = 30)
-list_box.grid(row=2, column=0)
+list_box.grid(row=2, column=0, rowspan=6, columnspan=2)
 #loop
 main_win.mainloop()
