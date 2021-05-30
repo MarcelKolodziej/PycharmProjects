@@ -1,60 +1,53 @@
-#!/usr/bin/env python3
+import os
 
-from getBudget import currentBudget, path
 
-def main():
-    endProgram = 'no'
-    totalBudget = currentBudget
-    while endProgram == 'no':
-        print('Welcome to the Personal Budget Program')
-        print('Menu Selections: ')
-        print('1-Add an Expense: ')
-        print('2-Add Revenue: ')
-        print('3-Check Budget Balance: ')
-        print('4-Save progress')
-        print('5-Exit without saving')
+class Budget(object):
+    def __init__(self):
+        os.system('cls')
+        self.budget = float(input('How much is your budget?\n'))
+        self.spending = self.budget * 0.5
+        os.system('cls')
+        self.main()
 
-        choice = int(input('enter your selection: '))
-        if choice == 1:
-            totalBudget = addExpense(totalBudget)
-        elif choice == 2:
-            totalBudget = addRevenue(totalBudget)
-        elif choice == 3:
-            print('Your balance is {0}'.format(totalBudget))
-        elif choice == 4:
-            saveBudget(totalBudget)
-            print('Thanks for saving your progress')
-        elif choice == 5:
-            endProgram = 'yes'
-            print('Thank you for using "Small budget" program, Goodbye')
+    def main(self):
+        print('This calculator uses 5:3:2 rule of spending by default.')
+        print('\nYour budget: $', '{:.2f}'.format(self.budget))
+        main_option = int(input('\nWhat do you want to do?\n1) View Budget Plan\n2) View Spending Budget\n3) Exit\n'))
+        if main_option == 1:
+            self.budget_plan()
+        elif main_option == 2:
+            self.spending_budget()
         else:
-            print('Invalid selection, please try again')
+            quit
+
+    def budget_plan(self):
+        os.system('cls')
+        option = int(input('How much do you want to save?\n1) 20%\n2) 30%\n'))
+        if option == 1:
+            self.saving = 0.2
+        elif option == 2:
+            self.saving = 0.3
+        else:
+            print('Please select only 1 or 2')
+        self.final_saving = self.budget * self.saving
+        self.extra = self.budget - self.spending - (self.budget * self.saving)
+        print('\nSpending: $', '{:.2f}'.format(self.spending), '\nTo Save: $', '{:.2f}'.format(self.final_saving),
+              '\nExtra: $', '{:.2f}'.format(self.extra))
+        os.system('pause')
+        os.system('cls')
+        self.main()
+
+    def spending_budget(self):
+        os.system('cls')
+        print('Spending Budget: $', '{:.2f}'.format(self.spending))
+        rent = float(input('\nHow much is your rent/mortgage?\n'))
+        bills = float(input('\nHow much are your monthly bills?\n'))
+        food = self.spending - rent - bills
+        print('\nEXPENSES:\nRent: $', '{:.2f}'.format(rent), '\nBills: $', '{:.2f}'.format(bills), '\nFood: $',
+              '{:.2f}'.format(food))
+        os.system('pause')
+        os.system('cls')
+        self.main()
 
 
-
-def addExpense(totalBudget):
-    expense = float(input('Enter your expense amount: $'))
-    timesPerMonth = int(input('How many times per month: '))
-    totalExpense = expense * timesPerMonth
-    if totalBudget - totalExpense >= 0:
-        totalBudget = totalBudget - totalExpense
-        print ('The expenses was accepted, your remaining budget is: ${0}'.format(totalBudget))
-        return totalBudget
-    else:
-        print ('The expenses was rejected because the budget exceeded.')
-        return totalBudget
-
-
-def addRevenue(totalBudget):
-    revenue = float(input('Enter new monthly income: $'))
-    totalBudget = totalBudget + revenue
-    print('your new budget is: ${0}'.format(totalBudget))
-    return totalBudget
-
-
-def saveBudget(totalBudget):
-    with open(path, 'w') as f:
-        f.write(str(totalBudget))
-    f.close()
-
-main()
+Budget()

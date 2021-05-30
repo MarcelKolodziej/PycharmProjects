@@ -1,5 +1,6 @@
+import tkinter as tk
+# from tkinter import *
 from getBudget import currentBudget, path
-from tkinter import *
 """
 
 Program do prowadzenia budżetu,
@@ -8,7 +9,12 @@ Program do prowadzenia budżetu,
 - generowanie raportów przychodów i rozchodów
 
 """
-class Aplication:
+
+root = tk.Tk()
+
+canvas = tk.Canvas(root, height=700, width=700, bg="#263D43")
+canvas.pack()
+
 def main():
     endProgram = 'no'
     totalBudget = currentBudget
@@ -33,6 +39,7 @@ def main():
         elif choice == 5:
             endProgram = 'yes'
             print('Do zobaczenia!')
+            quit()
         else:
             print('Nieprawidłowa komenda')
 #Dodaj wydatek
@@ -41,7 +48,7 @@ def dodajWydatek(totalBudget):
     wydatekWMiesiacu = int(input("Ile razy miesiecznie"))
     calosciowy_wydatek = wydatek * wydatekWMiesiacu
     if totalBudget - calosciowy_wydatek >= 0:
-        calosciowy_wydatek = totalBudget - calosciowy_wydatek
+        totalBudget = totalBudget - calosciowy_wydatek
         print('Wydatek został zaakceptowany, twój pozostały budżet to: ${0}'.format(totalBudget))
         return totalBudget
     else:
@@ -58,5 +65,8 @@ def zapiszBudzet(totalBudget):
     with open(path, 'w') as f:
         f.write(str(totalBudget))
     f.close()
-#loop
+
+#main loop
 main()
+root.mainloop()
+
