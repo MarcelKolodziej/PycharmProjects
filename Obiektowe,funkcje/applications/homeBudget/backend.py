@@ -54,18 +54,18 @@ def search(title = "", author = "", year = "", price = ""):
 def update(id,title,author,year,price):
     conn = sqlite3.connect("books.db")
     cur = conn.cursor()
-    cur.execute("UPDATE book SET title = ?, author = ?, year = ?, price = ? WHERE id = ?",(id,title,author,year,price))
+    cur.execute("UPDATE book SET title = ?, author = ?, year = ?, price = ? WHERE id = ?",(title,author,year,price,id))    #kolejnosc ma znaczenie
     conn.commit()
     conn.close()
 
 connect()
 os.system("cls")
-# pprint(search(title = "Python1"))
+pprint(search(title = "book1"))
 
 pprint(view())
-update(1, "book1", "author1", 2000, 500,)
+# update(1, "book1", "author1", 2000, 500,)
 
 # time.sleep(2)
-insert("Python4", "Uruk-Hai", 2003, 20)
+# insert("Python4", "Uruk-Hai", 2003, 20)
 # pprint(view())
 # delete(None)

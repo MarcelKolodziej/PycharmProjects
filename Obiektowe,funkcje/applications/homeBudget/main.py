@@ -1,6 +1,7 @@
 """ Simple Control Manager of Library with GUI, databes  """
 
 from tkinter import *
+import backend
 
 #Tkinter settings
 main_win = Tk()
@@ -8,7 +9,9 @@ main_win.title("Bookstore menager")
 
 # Logic
 def view_command():
-    pass
+    list_box.delete(0, END)
+    for row in backend.view():
+        list_box.insert(END, row)
 
 def search_command():
     pass
