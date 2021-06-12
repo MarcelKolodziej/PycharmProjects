@@ -1,3 +1,5 @@
+from tkinter import messagebox
+import pymysql
 from tkinter import *
 from PIL import ImageTk
 
@@ -11,19 +13,19 @@ class Mainwindow:
         self.root.resizable(False, False) # brak skalowania okienka
 
 
-### Dodawanie obrazka na głównym okienku ###
+### ADDING IMAGE TO MAIN WINDOW ###
 
         self.image=ImageTk.PhotoImage(file="img1.jpg")
         self.label=Label(self.root, image=self.image) # Dodawanie obrazka
         self.label.pack()
 
 
-    ###### CREATE FRAME ON ROOT WINDOW ###
+### CREATE FRAME ON ROOT WINDOW ###
 
         self.frame = Frame(self.root)
         self.frame.place(x=390, y=170, width=400, height=450)
 
-    ### CREATING LABELS AND ENTRY BOX ON FRAME ############
+### CREATING LABELS AND ENTRY BOX ON FRAME ###
         self.userLabel = Label(self.frame, text="USER_ID", font=("Andalus", 15, 'bold'))
         self.userLabel.place(x=88, y=50)
 
@@ -40,8 +42,16 @@ class Mainwindow:
                              bg="#00B0F0", font=('Arial', 15, 'bold'))
         self.button.place(x=88, y=250, width=250)
 
-    ###CREATING DATABASE CONNECTION ######
-
+###CREATING DATABASE CONNECTION ######
+    def Logindata(self):
+        con=pymysql.connect("localhost", 'root', 'Sagar123', 'student_menager')
+        cur = con.cursor()
+        cur.execute("Select * from admin_data where User_ID=%s and Password=%s,"(self.entry1.get(), self.entry2.get()))
+        row=cur.fetchone()
+        if row==None:
+            messagebox.showerror("WARNING","USER NOT FOUND")
+        else:
+            messagebox.showinfo("Succes","Login successfully")
 
 main = Mainwindow(root)     #wywołanie funkcji
 root.mainloop()
