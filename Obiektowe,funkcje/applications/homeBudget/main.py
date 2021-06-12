@@ -1,5 +1,6 @@
 """ Simple Control Manager of Library with GUI, databes  """
 
+# IMPORTS
 from tkinter import *
 import backend
 
@@ -7,22 +8,29 @@ import backend
 main_win = Tk()
 main_win.title("Bookstore menager")
 
-# Logic
+#Logic
 def view_command():
     list_box.delete(0, END)
     for row in backend.view():
         list_box.insert(END, row)
 
 def search_command():
-    pass
+    list_box.delete(0, END)
+    for row in backend.search(title_text.get(), author_text.get(), year_text.get(), price_text.get())
 
 def add_command():
-    pass
+    backend.insert(title_text.get(), author_text.get(), year_text.get(), price_text.get())
+    list.box.delate(0, END)
+    list_box.insert(END,(title_text.get(), author_text.get(), year_text.get()), price_text.get())
+    e_title.delete(0, END)
+    e_author.delete(0, END)
+    e_year.delete(0, END)
+    e_price(0, END)
 
 def update_command():
     pass
 
-def delate_command():
+def search_command():
     pass
 
 def delate_command():
@@ -31,7 +39,7 @@ def delate_command():
 def exit_command():
     exit()
 
-
+#GUI
 l_title =  Label(main_win, text = "Title" )
 l_title.grid(row=0, column=0)
 title_text = StringVar()

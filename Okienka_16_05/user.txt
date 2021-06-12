@@ -1,2 +1,4 @@
-Twoje imie Muran
-Twoje nazwisko Jedziesz
+Twoje imie 
+Twoje nazwisko 
+Twoja plec M
+Twój wiek 0

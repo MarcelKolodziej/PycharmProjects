@@ -1,7 +1,3 @@
-# Program to make a simple
-# login screen
-
-
 import tkinter as tk
 
 root = tk.Tk()

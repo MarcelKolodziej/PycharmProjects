@@ -2,7 +2,7 @@
 import os
 import re
 
-filename = 
+filename = ""
 filesize = os.path.getsize("daty.txt")
 
 if filesize == 0:

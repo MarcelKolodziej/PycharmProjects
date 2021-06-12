@@ -1,7 +1,5 @@
 #TODO:
-#autoinkrementacja primary key
 #naprawić usuwanie
-
 
 # Create a connection files
 # for the first time, create a table or format data scruture
@@ -60,9 +58,7 @@ def update(id,title,author,year,price):
 
 connect()
 os.system("cls")
-pprint(search(title = "book1"))
 
-pprint(view())
 # update(1, "book1", "author1", 2000, 500,)
 
 # time.sleep(2)
