@@ -1,8 +1,7 @@
-from tkinter import messagebox
-import pymysql
+import mysql.connector
 from tkinter import *
 from PIL import ImageTk
-
+from tkinter import messagebox
 
 root = Tk()
 class Mainwindow:
@@ -39,19 +38,31 @@ class Mainwindow:
         self.entry2.place(x=88, y=200, width=250)
 
         self.button = Button(self.frame, text='Login', activebackground="#00B0F0", activeforeground='white', fg='black',
-                             bg="#00B0F0", font=('Arial', 15, 'bold'))
+                             bg="#00B0F0", font=('Arial', 15, 'bold'),command=self.logindata)
         self.button.place(x=88, y=250, width=250)
 
 ###CREATING DATABASE CONNECTION ######
-    def Logindata(self):
-        con=pymysql.connect("localhost", 'root', 'Sagar123', 'student_menager')
-        cur = con.cursor()
-        cur.execute("Select * from admin_data where User_ID=%s and Password=%s,"(self.entry1.get(), self.entry2.get()))
-        row=cur.fetchone()
-        if row==None:
-            messagebox.showerror("WARNING","USER NOT FOUND")
-        else:
-            messagebox.showinfo("Succes","Login successfully")
+    def logindata(self):
+        log=str(self.entry1.get())
+        pas=str(self.entry2.get())
+        try:
+            mydb = mysql.connector.connect(
+                host="localhost",
+                user=log,
+                password=pas,
+                database="student_management"
+            )
+        except:
+            self.etykieta = Label(self.root, text="błąd połączenia")
+            self.etykieta.place(x=88, y=300, width=250)
+
+        # con=con.cursor
+       # cur=execute("Select & from student_management where User_ID=%s and Password=%s", (self.entry1.get), self.entry2.get())
+       #  row = cur.fetchone()
+       #  if row==None:
+       #      messagebox.showerror("Warning", "User Not found :(")
+       #  else:
+       #      messagebox.showinfo("Succes", "Login work ;-)")
 
 main = Mainwindow(root)     #wywołanie funkcji
 root.mainloop()
