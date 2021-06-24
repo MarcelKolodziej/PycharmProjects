@@ -52,17 +52,12 @@ class Mainwindow:
                 password=pas,
                 database="student_management"
             )
+            self.succes = Label(self.root, text="Połączono", bg='green', font=('Andalus', 15, 'bold'))
+            self.succes.place(x=475, y=500, width=250, )
         except:
-            self.etykieta = Label(self.root, text="błąd połączenia")
-            self.etykieta.place(x=88, y=300, width=250)
+            self.error = Label(self.root, text="Błąd połączenia", bg='red', font=('Andalus', 15, 'bold'))
+            self.error.place(x=475, y=500, width=250,)
 
-        # con=con.cursor
-       # cur=execute("Select & from student_management where User_ID=%s and Password=%s", (self.entry1.get), self.entry2.get())
-       #  row = cur.fetchone()
-       #  if row==None:
-       #      messagebox.showerror("Warning", "User Not found :(")
-       #  else:
-       #      messagebox.showinfo("Succes", "Login work ;-)")
 
 main = Mainwindow(root)     #wywołanie funkcji
 root.mainloop()

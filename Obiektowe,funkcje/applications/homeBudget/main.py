@@ -8,6 +8,19 @@ import backend
 main_win = Tk()
 main_win.title("Bookstore menager")
 
+def get_selected_row(event):
+    global selected_tuple
+    index = list_box.curselection()[0]
+    selected_tuple = list_box.get(index)
+    e_title.delete(0, END)
+    e_title.insert(END, selected_tuple[1])
+    e_author.delete(0, END)
+    e_author.insert(END, selected_tuple[2])
+    e_year.delete(0, END)
+    e_year.insert(END, selected_tuple[3])
+    e_price.delete(0, END)
+    e_price.insert(END, selected_tuple[4])
+
 #Logic
 def view_command():
     list_box.delete(0, END)
@@ -16,7 +29,8 @@ def view_command():
 
 def search_command():
     list_box.delete(0, END)
-    for row in backend.search(title_text.get(), author_text.get(), year_text.get(), price_text.get())
+    for row in backend.search(title_text.get(), author_text.get(), year_text.get(), price_text.get()):
+        list_box.insert(END, row)
 
 def add_command():
     backend.insert(title_text.get(), author_text.get(), year_text.get(), price_text.get())
@@ -28,13 +42,12 @@ def add_command():
     e_price(0, END)
 
 def update_command():
-    pass
-
-def search_command():
-    pass
+    backend.update(selected_tuple[0], title_text.get(), author_text.get, year_text.get(), price_text.get)
+    view_command()
 
 def delate_command():
-    pass
+    backend.delete(selected_tuple[0])
+    view_command()
 
 def exit_command():
     exit()
@@ -64,8 +77,11 @@ price_text = StringVar()
 e_price = Entry(main_win, textvariable=price_text)
 e_price.grid(row=1, column=3)
 
+# list box
 list_box = Listbox(main_win, height= 8, width = 30)
 list_box.grid(row=2, column=0, rowspan=6, columnspan=2)
+list_box.bind("<<ListboxSelect>>", get_selected_row)
+
 
 # buttons
 b_view = Button(main_win, text = "View all", width=10, command = view_command)
@@ -83,7 +99,7 @@ b_update.grid(row=5, column=3)
 b_delate = Button(main_win, text = "Delate", width=10, command = delate_command)
 b_delate.grid(row=6, column=3)
 
-b_exit = Button(main_win, text = "Exit", width = 10, command = exit_command)
+b_exit = Button(main_win, text = "Exit", width = 10, command = main_win.destroy)
 b_exit.grid(row=7, column=3)
 
 #loop
