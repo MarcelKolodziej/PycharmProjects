@@ -1,0 +1,11 @@
+Strona ta zawiera kilka rejestrów: 
+-podmiotów leczniczych, 
+-praktyk lekarzy i lekarzy dentystów
+-praktyk pielęgniarek i położnych
+-praktyk fizjoterapeutów. 
+
+Przydałby się dwie rzeczy z tych rejestrów:
+
+1) Jeden znany broker podobno ma jakiś prosty myk na sprawdzenie, które podmioty będą dopiero otwierały swoją działalność - tu nie chodzi o wpisanie daty w rubryce "podmiot działający w dniu", bo wtedy pokazują się wszystkie, które działają np. dzisiaj nawet te z 1999 roku :) - chciałabym poznać ten myk, bo to skarbnica klientów.
+
+2) Kiedyś miałam na panoramie firm takiego bota, który ładował mi do excela tę bazę, którą wyświetliłam- czyli w tym przypadku np. wyświetlam wszystkie podmioty z województwa śląskiego na stronie rpwdl i bot sam je sobie otwiera jeden po drugim i do excela ładuje mi np. takie dane jak numer tel, mail, nazwa podmiotu, adres i coś tam jeszcze... Czy wyświetlam wszystkie pielęgniarki z województwa dolnośląskiego i dzieje się to samo. 
