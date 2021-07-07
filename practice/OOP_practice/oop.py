@@ -21,5 +21,15 @@ class Course:
             return True
         return False
 
-    def get_avarge_grade(self):
+    def get_average_grade(self):
         pass
+
+s1 = Student("Tim", 19, 95)
+s2 = Student("Bill", 19, 75)
+s3 = Student("Jill", 19, 35)
+
+course = Course("Science", 2)
+course.add_student(s1)
+course.add_student(s2)
+
+print(course.students[0].name)
