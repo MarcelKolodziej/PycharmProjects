@@ -2,14 +2,17 @@
 
 class Dog:
     # special method
-    def __init__(self, name):
+    def __init__(self, name, age):
         self.name = name
-        print(name)
+        self.age = age
 
-    def add_one(self, x):
-        return x + 1
+    def get_name(self):
+        return self.name
 
-    def bark(self):
-        print("bark")
+    def get_age(self):
+        return self.age
 
-d = Dog("Tim")
+d = Dog("Tim", 43)
+print(d.get_name())
+d2 = Dog("Bill", 11)
+print(d2.get_name())
