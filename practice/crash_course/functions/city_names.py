@@ -6,16 +6,8 @@
 # city_country_names('Warsaw', 'Poland')
 # city_country_names('Santiago', 'Chile')
 
-def make_album(artist_name, album_title, number_of_songs=None):
-    """Return dictionary"""
-    album = {'artist name': artist_name, 'album_title': album_title, 'number_of_songs':number_of_songs }
+def full_album_name(artist_name, song_name):
+    """Return neatly formatted full album"""
+    return (f"{artist_name} {song_name}")
 
-    if number_of_songs:
-        album = (f"{artist_name} {album_title} {number_of_songs}")
-        return album
-    else:
-        album = (f"{artist_name} {album_title}")
-        return album
-
-
-print(make_album('Jimmy Hendrix', 'Stair Way to Heaven', 12))
+full_album_name("Pink Floyd", "Dark side of the moon")
