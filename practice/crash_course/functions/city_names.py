@@ -10,4 +10,5 @@ def full_album_name(artist_name, song_name):
     """Return neatly formatted full album"""
     return (f"{artist_name} {song_name}")
 
+
 full_album_name("Pink Floyd", "Dark side of the moon")
