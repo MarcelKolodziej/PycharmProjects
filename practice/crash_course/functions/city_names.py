@@ -9,13 +9,13 @@
 def make_album(artist_name, album_title, number_of_songs=None):
     """Return dictionary"""
     album = {'artist name': artist_name, 'album_title': album_title, 'number_of_songs':number_of_songs }
-    if number_of_songs:
-        album['number_of_songs'] = number_of_songs
 
+    if number_of_songs:
+        album = (f"{artist_name} {album_title} {number_of_songs}")
+        return album
     else:
         album = (f"{artist_name} {album_title}")
         return album
 
 
-print(make_album('Jimmy Hendrix', 'Stair Way to Heaven'))
 print(make_album('Jimmy Hendrix', 'Stair Way to Heaven', 12))
