@@ -40,8 +40,8 @@ def hangman():
         print(lives_visual_dict[lives])
         print('Current word: ', '  '.join(word_list))
 
-        # imput
-        user_letter = input("Guess a letter:").upper()  # small "a" is a diffrent then capital "A"
+        # input
+        user_letter = input("Guess a letter:").upper()  # small "a" is a different then capital "A"
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
             if user_letter in word_letters:
