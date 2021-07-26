@@ -21,12 +21,3 @@
 # build_sandwich('ham', 'cheese')
 # build_sandwich('mushrooms')
 
-def build_car(manufacturer, model_name, **options):
-    """Print info about a car to make, take optional arguments from users info"""
-    options['manufacturer'] = manufacturer
-    options['model name'] = model_name
-    return options
-
-print(build_car('subaru', 'outback',
-                color = 'blue',
-                tow_package=True))
