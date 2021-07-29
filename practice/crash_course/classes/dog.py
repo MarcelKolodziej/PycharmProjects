@@ -1,5 +1,5 @@
 class Dog:
-    """A simple atemp to model a dog."""
+    """A simple attempt to model a dog."""
 
     def __init__(self, name, age):
         """Initialize name and age attributes."""
